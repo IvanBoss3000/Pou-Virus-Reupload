@@ -7,6 +7,9 @@
 #include <sysinfoapi.h>
 #include <strsafe.h>
 #include <Lmcons.h>
+#include <math.h>
+
+#define _USE_MATH_DEFINES 1
 
 using namespace std;
 using std::filesystem::current_path;
@@ -24,3 +27,12 @@ int setRegValue(LPCTSTR LOCATION);
 string username();
 int copyFile(string file, string destination, string fileName);
 int getNumOfWindows();
+
+
+
+
+void RussianGdi();
+
+void RussianManCool();
+
+void Russ();

