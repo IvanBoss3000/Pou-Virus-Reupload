@@ -49,7 +49,7 @@ void pouVitalsCheck() {
 
 }
 
-/*
+/*			ADD POU IMAGE, AND FIND OUT HOW TO HAVE A TRANSPARENT BACKGROUND
 
 void pouSaysHello() {
 	//PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE | SND_NOSTOP);
@@ -90,6 +90,9 @@ void pouSaysHello() {
 
 */
 
+
+//THese are not needed but i might use them to mess with the user.
+
 void RussianGdi() {
 	srand(time(NULL));
 
@@ -115,7 +118,6 @@ void RussianGdi() {
 		}
 	}
 }
-
 
 void RussianManCool() {
 	int width;
@@ -166,7 +168,6 @@ void RussianManCool() {
 		DeleteObject(rainbow);
 	}
 }
-
 
 void Russ() {
 	HDC desk = GetDC(0);

